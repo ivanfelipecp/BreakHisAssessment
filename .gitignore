@@ -2,6 +2,7 @@ datasets/breakhis
 datasets/DNLM_1
 datasets/um_breakhis
 results/*
+utils/__pycache__
 *.txt
 src/__pycache__
 run.txt
