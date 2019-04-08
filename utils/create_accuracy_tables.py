@@ -7,7 +7,7 @@ from tables_vars_accuracy import *
 architectures = ["squeezenet","traditional"]
 number_archs = len(architectures)
 
-magnifications = ["40"]
+magnifications = ["40","117"]
 
 #AUM & CLAHE & DNLM & HE & Original
 preprocs = ["um","clahe","dnlm1","he","rgb"]
