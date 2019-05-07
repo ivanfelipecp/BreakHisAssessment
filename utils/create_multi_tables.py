@@ -4,13 +4,13 @@ import sys
 import numpy as np
 from tables_vars_multi import *
 
-architectures = ["squeezenet","traditional"]
+architectures = ["densenet","squeezenet","traditional"]
 number_archs = len(architectures)
 
-magnifications = ["40", "117"]
+magnifications = ["40", "100", "200", "400"]
 
 #AUM & CLAHE & DNLM & HE & Original
-preprocs = ["um","clahe","dnlm1","he","rgb"]
+preprocs = ["um","rgb"]
 number_preprocs = len(preprocs)
 
 kfold_dir = "../results/kfold"
@@ -151,7 +151,7 @@ def main():
 				for a in architectures:
 					init_row = get_init_row(a, architectures[0], m)
 					line = lines[j][m][a][p]
-					end_row = get_end_row(a, architectures[0])
+					end_row = get_end_row(a, architectures[-1])
 					table += init_row + line + end_row
 			metric = "{} accuracy per class mean$\pm$std".format(p) if j==key_ACC else "{} F1-score per class mean$\pm$std".format(p)
 			table += end_accuracy(metric)

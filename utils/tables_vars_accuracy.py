@@ -1,5 +1,5 @@
 def begin_accuracy():
-    return "\\begin{table}[H] \n\\scalebox{0.6}{ \n\\begin{tabular}{c|c|c|c|c|c|c|} \cline{2-7} \n& Architecture & AUM & CLAHE & DNLM & HE & Original \\\\ \\hline"
+    return "\\begin{table}[H] \n\\scalebox{0.6}{ \n\\begin{tabular}{c|c|c|c|} \cline{2-4} \n& \diagbox[]{Architecture}{Preprocessing} & AUM & Original \\\\ \\hline"
 
 def end_accuracy(metric):
     return "\end{tabular}} \n\caption{metric} \n\end{table}".replace("metric", metric)
@@ -11,7 +11,7 @@ def init_others_row_accuracy():
     return "\multicolumn{1}{|c|}{}"
 
 def end_others_row_accuracy():
-    return "\\\\ \cline{2-7} \n"
+    return "\\\\ \cline{2-4} \n"
 
 def end_final_row_accuracy():
     return "\\\\ \hline \n"
@@ -21,9 +21,6 @@ def get_init_row(i, mag):
 
 def get_end_row(number, i):
     return end_others_row_accuracy() if (i+1) < number else end_final_row_accuracy()   
-
-example_row = " & Densenet & 0 & 0 & 0 & 0 & 0"
-
 
 #print(begin_accuracy())
 #print(init_first_row_accuracy("40") + example_row + end_others_row_accuracy())

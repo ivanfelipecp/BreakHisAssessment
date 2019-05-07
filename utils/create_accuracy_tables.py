@@ -4,13 +4,13 @@ import sys
 import numpy as np
 from tables_vars_accuracy import *
 
-architectures = ["squeezenet","traditional"]
+architectures = ["densenet","squeezenet","traditional"]
 number_archs = len(architectures)
 
-magnifications = ["40","117"]
+magnifications = ["40","100","200","400"]
 
 #AUM & CLAHE & DNLM & HE & Original
-preprocs = ["um","clahe","dnlm1","he","rgb"]
+preprocs = ["um","rgb"]
 number_preprocs = len(preprocs)
 
 kfold_dir = "../results/kfold"
